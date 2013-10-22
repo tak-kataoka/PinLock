@@ -1,0 +1,24 @@
+/* JQUERY.PINLOCK */
+
+.cpin_passwordcontainer, .cpin_passwordcontainer * {-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+.cpin_passwordcontainer {float:left;width:100%;position:relative;}
+
+/* SAMPLE */
+
+form{float:left;width:75%;}
+.cpin_passwordcontainer{border:1px solid #333;border-radius:50%;}
+
+
+.cpin_holder{position:absolute;margin:auto;top:0;bottom:0;left:0;right:0;width:50%;height:50%;float:left;-webkit-transition:-webkit-transform 280ms 150ms;-moz-transition:-moz-transform 280ms 150ms;-o-transition:-o-transform 280ms 150ms;-ms-transition:-ms-transform 280ms 150ms;transition:transform 280ms 150ms;}
+.cpin_button{margin:1%;width:31.3333333333%;height:31.3333333333%;padding:0;background:none;border:1px solid #333;border-radius:50%;font-size:62px;position:relative;}
+.cpin_button:focus{outline:none !important;}
+.cpin_button span{position:absolute;margin:auto;top:0;left:0;right:0;bottom:0;float:left;width:65%;height:65%;-webkit-transition:-webkit-transform 150ms;-moz-transition:-moz-transform 150ms;-o-transition:-o-transform 150ms;-ms-transition:-ms-transform 150ms;transition:transform 150ms;}
+.cpin_holder.cl span{-webkit-box-shadow:1px 1px 3px 0 rgba(0,0,0,0.5) inset;box-shadow:1px 1px 3px 0 rgba(0,0,0,0.5) inset;}
+
+.r0{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}
+.r180{-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-o-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg);}
+.r90{-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-o-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg);}
+.r-90{-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-o-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg);}
+
+.sc0{-webkit-transform:scale(0,0);-moz-transform:scale(0,0);-o-transform:scale(0,0);-ms-transform:scale(0,0);transform:scale(0,0);}
+.sc1{-webkit-transform:scale(1,1);-moz-transform:scale(1,1);-o-transform:scale(1,1);-ms-transform:scale(1,1);transform:scale(1,1);}
