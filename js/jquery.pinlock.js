@@ -71,9 +71,8 @@
     Plugin.prototype.clickHandler = function (event) {
         event.preventDefault();
         var nvalue = null,
-            bitem = null,
-            holderrot = '',
-            erot = '',
+            er = null,
+            hr = null,
             numBtns = null;
         if(event.target.nodeName.toLowerCase()=="span"){
             nvalue = event.target.parentNode.dataset.next;
@@ -81,23 +80,27 @@
             nvalue = event.target.dataset.next;
         }
         switch(nvalue){
-            case 'll': holderrot = 'r90'; erot = 'r-90'
+            case 'll': er = '90'; hr = '-90';
                 break;
-            case 'gl': holderrot = 'r180'; erot = 'r180'
+            case 'gl': er = '180'; hr = '180';
                 break;
-            case 'cl': holderrot = 'r0'; erot = 'r0'
+            case 'cl': er = '-90'; hr = '90';
                 break;
-            case 'sl': holderrot = 'r-90'; erot = 'r90'
+            case 'sl': er = '-90'; hr = '90';
                 break;
-            case 'nl': holderrot = 'r180'; erot = 'r180'
+            case 'nl': er = '180'; hr = '180';
                 break;
-            case 'pl': holderrot = 'r0'; erot = 'r0'
+            case 'pl': er = '0'; hr = '0';
                 break;
         }
-        $('.cpin_button span').removeClass().addClass('sc0 '+erot);
-        $(holder).removeClass().addClass('cpin_holder ' + nvalue + ' ' + holderrot);
-        Plugin.prototype.setPinBoard(nvalue);
-        
+        numBtns = $('.cpin_button span').length;
+        $('.cpin_button span').transition({ scale: 0 },150, function(){
+        	if( --numBtns > 0 ) {return;}
+        	$(holder).transition({ rotate: er }, 150, function(){
+        		$('.cpin_button span').css({rotate: hr});
+	        	Plugin.prototype.setPinBoard(nvalue);
+	        })
+        });
     };
 
     Plugin.prototype.setPinBoard = function (selectedkey) {
@@ -115,7 +118,7 @@
             }
             b.dataset.next = labels[i].next;
         }
-        
+        $('.cpin_button span').transition({ scale: 1 },150);
     };
 
     $.fn[pluginName] = function (options) {
